@@ -1,0 +1,60 @@
+
+
+<ng-template #divLoading>
+  <mat-grid-list cols="1">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>
+
+
+<div *ngIf="song; else divLoading" class="grid mt-2 p-2" >
+     <mat-card class="col-12 sm:col-6" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>{{song.title}}</mat-card-title>
+          <mat-card-subtitle>{{song.album}}</mat-card-subtitle>
+        </mat-card-header>
+
+        <img [src]="song | songImage" [alt]="song.title" mat-card-image   />
+     </mat-card>
+
+     <mat-card class="col-12 sm:col-6" appearance="outlined" >
+      <mat-card-header>
+        <mat-card-title>Song Information: </mat-card-title>
+        <mat-card-subtitle>{{song.title}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>{{song.artist}}</mat-list-item>
+          <mat-list-item>{{song.year}}</mat-list-item>
+          <mat-list-item>{{song.album}}</mat-list-item>
+          <mat-list-item>{{song.genre}}</mat-list-item>
+          <mat-list-item>{{song.duration}}</mat-list-item>
+          <mat-list-item>{{song.plays | number}}</mat-list-item>
+          <mat-list-item>{{song.language}}</mat-list-item>
+        </mat-list>
+
+        <button
+          mat-button
+          color="warn"
+          (click)="goBack()"
+        >
+        Back
+        </button>
+
+        <span class="spacer"></span>
+
+        <button
+        mat-button
+        color="warn"
+      >
+        Listen Song
+      </button>
+      </mat-card-content>
+
+
+     </mat-card>
+</div>
+\

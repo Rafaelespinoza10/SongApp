@@ -1,0 +1,32 @@
+<mat-card class="m-2 p-2" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title class="font-bold">{{song.title}}</mat-card-title>
+    <mat-card-subtitle>{{song.artist}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image [src]="song | songImage" [alt]="song.title" class="w-full h-auto p-1">
+
+  <mat-card-content class="text-2xl">
+    <h4>{{song.year}}</h4>
+    <p>
+      <strong>Duration: </strong> {{song.duration}}
+    </p>
+    <br>
+    <mat-chip-listbox class="text-xl">
+      <mat-chip>{{song.genre}}</mat-chip>
+      <mat-chip>{{song.album}}</mat-chip>
+    </mat-chip-listbox>
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-actions class="flex justify-center space-x-2"> <!-- Cambios aquí -->
+    <button mat-button mat-raised color="primary" [routerLink]="['/songs/edit', song.id]" class="text-xl p-3"> <!-- Aumentar padding -->
+      <mat-icon>edit</mat-icon> Edit
+    </button>
+    <span class="spacer"> </span>
+    <button mat-button mat-raised color="primary" [routerLink]="['/songs', song.id]" class="text-xl p-3"> <!-- Aumentar padding -->
+      <mat-icon>more_horiz</mat-icon> More
+    </button>
+  </mat-card-actions>
+</mat-card>
