@@ -36,25 +36,26 @@
           <mat-list-item>{{song.language}}</mat-list-item>
         </mat-list>
 
-        <button
+        <div class="flex justify-content-between">
+          <button
+            mat-button
+            color="primary"
+            (click)="goBack()"
+          >
+          Back
+          </button>
+
+          <button
           mat-button
-          color="warn"
-          (click)="goBack()"
+          color="primary"
+          (click)="goToYoutubeMusic()"
         >
-        Back
+          Listen Song
         </button>
 
-        <span class="spacer"></span>
-
-        <button
-        mat-button
-        color="warn"
-      >
-        Listen Song
-      </button>
+        </div>
       </mat-card-content>
 
 
      </mat-card>
 </div>
-\

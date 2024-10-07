@@ -1,5 +1,5 @@
 {
-  "users":[
+  "users": [
     {
       "id": 1,
       "user": "Jonh Parker",
@@ -7,18 +7,6 @@
     }
   ],
   "topSongs": [
-    {
-      "id": 1,
-      "title": "Blinding Lights",
-      "artist": "The Weeknd",
-      "year": 2019,
-      "genre": "Pop",
-      "duration": "3:20",
-      "duration_seconds": 200,
-      "album": "After Hours",
-      "plays": 2800000000,
-      "language": "English"
-    },
     {
       "id": 2,
       "title": "Shape of You",
@@ -29,19 +17,8 @@
       "duration_seconds": 233,
       "album": "÷ (Divide)",
       "plays": 3000000000,
-      "language": "English"
-    },
-    {
-      "id": 3,
-      "title": "Dance Monkey",
-      "artist": "Tones and I",
-      "year": 2019,
-      "genre": "Pop",
-      "duration": "3:29",
-      "duration_seconds": 209,
-      "album": "The Kids Are Coming",
-      "plays": 2500000000,
-      "language": "English"
+      "language": "English",
+      "alt_img": null
     },
     {
       "id": 4,
@@ -510,6 +487,45 @@
       "album": "Te Boté (Remix)",
       "plays": 700000000,
       "language": "Spanish"
+    },
+    {
+      "id": 43,
+      "title": "More Than Words",
+      "artist": "Extreme",
+      "year": 1990,
+      "genre": "Romantic Ballad",
+      "duration_seconds": 345,
+      "album": "Extreme II: Pornograffitti ",
+      "plays": 770000001,
+      "language": "English",
+      "alt_img": "https://m.media-amazon.com/images/I/71hMXJMj9wL._AC_SX569_.jpg",
+      "duration": "5:45"
+    },
+    {
+      "id": 44,
+      "title": "Blinding Lights",
+      "artist": "The weekend",
+      "year": 2019,
+      "genre": "Pop",
+      "duration_seconds": 234,
+      "album": "After Hours",
+      "plays": 1000000000,
+      "language": "English",
+      "alt_img": "https://i1.sndcdn.com/artworks-VdEdexuKBOERySRC-hsSOPA-t500x500.jpg",
+      "duration": "3:54"
+    },
+    {
+      "id": 45,
+      "title": "Bad ",
+      "artist": "Michael Jackson",
+      "year": 1987,
+      "genre": "Pop",
+      "duration_seconds": 247,
+      "album": "Bad",
+      "plays": 1000000,
+      "language": "English",
+      "alt_img": "https://i.discogs.com/isL1NGfOA7j4dOriNlbkyIjv4ITu6CelEpUhOuYzCsI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDk3/NS0xNDE1MTc0MDMx/LTI3MjAuanBlZw.jpeg",
+      "duration": "4:07"
     }
   ]
 }

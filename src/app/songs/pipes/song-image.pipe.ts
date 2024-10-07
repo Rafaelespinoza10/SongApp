@@ -7,12 +7,14 @@ import { Song } from '../interfaces/songs.interface';
 export class SongImagePipe implements PipeTransform {
 
   transform(song: Song): string {
-    if(!song.id && song.alt_img) return 'assets/no-image.jpg'
+    if( song.id <= 0  && !song.alt_img){
+      return 'assets/no-image.jpg'
+    }
 
-    if(song.alt_img) return song.alt_img;
-
+    if(song.alt_img){
+      return song.alt_img;
+    }
     return `assets/songs/${song.id}.jpg`
-
   }
 
 }

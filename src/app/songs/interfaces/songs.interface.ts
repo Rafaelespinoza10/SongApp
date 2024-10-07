@@ -19,4 +19,7 @@ export interface Song {
 export enum Language {
   English = "English",
   Spanish = "Spanish",
+  French = "French",
+  Portuguese = "Portuguese",
+  Italian = "Italian",
 }

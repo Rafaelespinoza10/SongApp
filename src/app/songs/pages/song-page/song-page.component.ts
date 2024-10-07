@@ -27,12 +27,20 @@ export class SongPageComponent implements OnInit {
             return this.router.navigate(['/songs/list']);
         }
             this.song = song;
-            console.log({song});
             return;
         })
     }
 
     goBack():void{
       this.router.navigate(['/songs/list']);
+    }
+
+    goToYoutubeMusic(){
+      //!TODO: mandar a Youtube con el song.title
+      const title = this.song?.title;
+      if (title) {
+        const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(title)}`;
+        window.open(youtubeSearchUrl, '_blank'); // Abre la búsqueda de YouTube en una nueva pestaña
+      }
     }
 }

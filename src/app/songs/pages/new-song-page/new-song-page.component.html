@@ -1,1 +1,155 @@
-<p>new-hero-page works!</p>
+<h1>{{currentSong.id ? 'Edit' : 'Add New '}} Song   <small class="font-bold" *ngIf="currentSong.id">{{ currentSong.title}}</small>
+</h1>
+
+<mat-divider class="mb-2"></mat-divider>
+
+<div class="grid">
+
+  <div class="col-12 sm:col-6">
+      <mat-card>
+        <mat-card-content>
+          <form class="grid" [formGroup]="songForm" (ngSubmit)="onSubmit()">
+
+            <mat-form-field class="col-12 sm:col-6">
+                <mat-label>Title: </mat-label>
+                <input
+                  matInput
+                  type="text"
+                  required
+                  formControlName="title"
+                />
+            </mat-form-field>
+
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Artist: </mat-label>
+              <input
+                matInput
+                type="text"
+                required
+                formControlName="artist"
+              />
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Year: </mat-label>
+            <input
+              matInput
+              type="number"
+              required
+              formControlName="year"
+            />
+        </mat-form-field>
+
+        <mat-form-field class="col-12 sm:col-6">
+          <mat-label>Genre: </mat-label>
+          <input
+            matInput
+            type="text"
+            required
+            formControlName="genre"
+          />
+      </mat-form-field>
+
+        <mat-form-field class="col-12 sm:col-6">
+          <mat-label>Duration(seconds): </mat-label>
+          <input
+            matInput
+            type="number"
+            required
+            formControlName="duration_seconds"
+          />
+      </mat-form-field>
+
+      <mat-form-field class="col-12 sm:col-6">
+        <mat-label>Duration(mm:ss): </mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="duration"
+          [value]="songForm.get('duration_seconds')?.value ?? 0 | duration"
+        />
+    </mat-form-field>
+
+
+      <mat-form-field class="col-12">
+        <mat-label>Album: </mat-label>
+        <input
+          matInput
+          type="text"
+          required
+          formControlName="album"
+        />
+    </mat-form-field>
+
+    <mat-form-field class="col-12">
+      <mat-label>Plays: </mat-label>
+      <input
+        matInput
+        type="number"
+        required
+        formControlName="plays"
+      />
+  </mat-form-field>
+
+
+
+  <mat-form-field class="col-12">
+    <mat-label>Languages: </mat-label>
+      <mat-select
+      required
+      formControlName="language"
+      >
+        <mat-option
+          *ngFor="let lang of  languages"
+          [value]="lang.id">
+            {{lang.value}}
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field class="col-12">
+    <mat-label>Alternative Album Image: </mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="alt_img"
+    />
+</mat-form-field>
+
+
+</form>
+
+          <div class="flex justify-content-between">
+                <button
+                  *ngIf="currentSong.id"
+                  mat-flat-button
+                  color="primary"
+                  (click)="onDeleteSong()"
+                > Delete
+                </button>
+
+                <span></span>
+
+                <button
+                mat-flat-button
+                color="primary"
+                (click)="onSubmit()"
+              >
+                <mat-icon>save</mat-icon>
+              Save
+            </button>
+          </div>
+
+
+        </mat-card-content>
+      </mat-card>
+  </div>
+
+  <div class="col-12 sm:col-6">
+      <mat-card>
+        <img  [src]="currentSong | songImage"  alt="currentSong.alt_img"  mat-card-image/>
+      </mat-card>
+  </div>
+
+</div>
